@@ -1,0 +1,26 @@
+.section_1{
+    background-image: url(../img/background_site.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   padding-bottom: 180px;
+}
+.logo{
+    margin-top: -80px;
+    height: 400px;
+}
+
+.section_1,h1,.devweb{
+    color: white;
+}
+
+h1{
+    font-size: 96px;
+}
+
+.devweb{
+    font-size: 128px;
+    margin-top: 150px;
+}

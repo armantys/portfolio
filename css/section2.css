@@ -1,0 +1,27 @@
+.section2{
+    background-image: url(../img/fond_bois.jpg);
+    padding-bottom: 250px;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.moi{
+    width: 60%;
+    background-color: #C9C9C9;
+    display: flex;
+    flex-direction: column;
+    margin-top: 250px;
+   
+}
+
+h2{
+    text-align: center;
+    font-size: 62px;
+}
+
+.description_moi{
+    text-align: center;
+    font-size: 32px;
+}

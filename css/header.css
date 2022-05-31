@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    display: flex;
+    background-color: black;
+    justify-content: flex-end;
+  
+}
+
+
+header ul{
+    display: flex;
+    justify-content: flex-end;
+   
+    
+}
+
+header ul li{
+    margin-right: 50px;
+    margin-top: 40px;
+    font-size: 24px;
+    color: white;
+     padding-left: 40px;
+     list-style: none;
+}

@@ -1,0 +1,36 @@
+.section3{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    align-items: center
+   
+}
+
+.section3 img {
+    width: 700px;
+}
+
+.section3 p{
+    font-size: 36px;
+}
+
+.jadoo{
+    text-align: center;
+}
+
+.voyage{
+   
+    text-align: center;
+}
+
+.voyage img{
+     width: 750px;
+     margin-top: 25px;
+}
+
+.retro{
+   align-items: center;
+    text-align: center;
+    grid-row: 4;
+   
+}
