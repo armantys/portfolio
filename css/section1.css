@@ -1,6 +1,5 @@
 .section_1{
-    background-image: url(../img/background_site.png);
-    background-size: cover;
+    background-image: url(../img/background_site.png);   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +7,7 @@
    padding-bottom: 180px;
 }
 .logo{
-    margin-top: -80px;
+    z-index: 2;
     height: 400px;
 }
 

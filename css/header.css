@@ -3,12 +3,19 @@
     padding: 0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 
 header {
+    z-index: 1;
+    width: 100%;
+    position: fixed;
     display: flex;
     background-color: black;
     justify-content: flex-end;
-  
+    
 }
 
 
@@ -26,4 +33,9 @@ header ul li{
     color: white;
      padding-left: 40px;
      list-style: none;
+}
+
+.lien{
+    text-decoration: none;
+    color: white;
 }

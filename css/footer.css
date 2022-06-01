@@ -1,0 +1,23 @@
+footer{
+    font-size: 20px;
+    width: 100%;
+    background-color: grey;
+    display: flex;
+}
+
+.footer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo_nom{
+    display: flex;
+    align-items: center;
+}
+
+.logo_footer{
+    height: 80px;
+}

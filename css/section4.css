@@ -1,0 +1,41 @@
+.section4{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(99, 99, 105);
+    padding-bottom: 200px;
+
+}
+
+.front_end{
+    margin-top: 150px;
+}
+
+.back_end{
+    margin-top: 150px;
+}
+
+.section4 h3{
+    text-align: center;
+    font-size: 50px;
+}
+
+.les_front{
+    width: 1000px;
+}
+
+.back_end_1{
+    width: 300px;
+}
+
+.back_end_2{
+    width: 300px;
+}
+
+.les_cms h3{
+    margin-top: 100px;
+}
+
+.les_cms img{
+    width: 300px;
+}
