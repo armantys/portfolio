@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./css/section3.css">
     <link rel="stylesheet" href="./css/section4.css">
     <link rel="stylesheet" href="./css/section5.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/font.css">
     <title>Portfolio Ludovic Souquet</title>
@@ -58,16 +59,11 @@
         foreach($projets as $proj){
         echo    '<div class="jadoo">
                     <p>'.$proj['nom_projet'].'</p>
-                    <img src="./img/'.$proj['img_projet'].'" alt="'.$proj['nom_projet'].'" onclick="page_jeux(event)">
-                </div>
-                <aside id="modal1" class="modal" aria-hiden="true role="dialog" aria-labelledby="titlemodal" style="display:none;">
-                    <div class="modal-wrapper">
-                    <h1 id="titlemodal">Hello, little man. I will destroy you!</h1>
-                    </div>
-                </aside>';
+                 <a href="./pages/modal.php#modal1" class="js-modal">  <img id="projet1" src="./img/'.$proj['img_projet'].'" alt="'.$proj['nom_projet'].'"></a>
+                </div>';       
         }
-        ?>   
-    </section>
+        ?>
+    </section >
     <section id="section4" class="section4">
         <div class="front_end">
             <h3>front-end</h3>
