@@ -1,4 +1,5 @@
 .modal {
+    overflow: auto;
     display: flex;
     position: fixed;
     align-items: center;

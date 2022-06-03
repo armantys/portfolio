@@ -1,0 +1,44 @@
+.carousel{
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel__container::after{
+    content:'';
+    clear: both;
+    display: table;
+}
+
+.carousel__item{
+    float: left;
+}
+
+.carousel__next, .carousel__prev{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: white url(../img/pngtree-vector-left-arrow-icon-png-image_4184717.jpg) center center no-repeat;
+    background-size: 20px 20px;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -20px;
+    right: 0px;
+    cursor: pointer;
+    transition: transform 0.3;
+
+}
+
+.carousel__next:hover, .carousel__prev:hover{
+    transform: scale(1.2);
+}
+
+.carousel__prev{
+    right: auto;
+    left: 0px;
+
+}
+
+.items {
+    position: relative;
+}
+

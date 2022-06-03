@@ -15,15 +15,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/section1.css">
-    <link rel="stylesheet" href="./css/section2.css">
-    <link rel="stylesheet" href="./css/section3.css">
-    <link rel="stylesheet" href="./css/section4.css">
-    <link rel="stylesheet" href="./css/section5.css">
-    <link rel="stylesheet" href="./css/modal.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/section1.css">
+    <link rel="stylesheet" href="css/section2.css">
+    <link rel="stylesheet" href="css/section3.css">
+    <link rel="stylesheet" href="css/section4.css">
+    <link rel="stylesheet" href="css/section5.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/font.css">
     <title>Portfolio Ludovic Souquet</title>
 </head>
 <header>
@@ -56,12 +57,13 @@
     <section id="section3" class="section3">
 
     <?php
+            $i=0;
         foreach($projets as $proj){
         echo    '<div class="jadoo">
                     <p>'.$proj['nom_projet'].'</p>
-                 <a href="./pages/modal.php#modal1" class="js-modal">  <img id="projet1" src="./img/'.$proj['img_projet'].'" alt="'.$proj['nom_projet'].'"></a>
+                 <a  href="modal.php#modal1" class="js-modal">  <img id="projet'.$i.'"  src="./img/'.$proj['img_projet'].'" alt="'.$proj['nom_projet'].'"></a>
                 </div>';       
-        }
+       $i++; }
         ?>
     </section >
     <section id="section4" class="section4">
@@ -130,6 +132,7 @@
             </div>
         </div>
     </footer>
-    <script src="js/index.js"></script>
+    <script src="js/index.js" async></script>
+    <script src="js/carousel.js" async></script>
 </body>
 </html>

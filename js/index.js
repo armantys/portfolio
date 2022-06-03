@@ -1,3 +1,8 @@
+
+
+
+
+
 let modal = null
 const focusableSelector = 'button,a,input,textarea'
 let focusables = []
@@ -6,9 +11,11 @@ let focusables = []
 
 
 const openModal =  async function (e) {
+
     e.preventDefault()
-    const target = e.target.getAttribute('href')
+    const target = document.getElementById(e.target.id).parentNode.getAttribute('href')
     if (target.startsWith('#')){
+      //  modal = await loadModal(target)
         modal = document.querySelector(target)
     }else{
         modal = await loadModal(target)
@@ -47,9 +54,15 @@ const stopPropagation = function(e){
 
 const loadModal =  async function (url) {
     const target = '#' + url.split('#')[1]
+    const exitingModal = document.querySelector(target)
+    if (exitingModal !== null) return exitingModal
   const html = await fetch(url).then(response => response.text())
- const fragment = document.createRange().createContextualFragment(html)
-  console.log(fragment)
+ const element = document.createRange().createContextualFragment(html).querySelector(target)
+ if (element === null) throw `l'élément ${target} n'a pas été trouver dans la page ${url}`
+ document.body.append(element)
+ return element
+
+  
 }
 
 
@@ -66,3 +79,4 @@ window.addEventListener('keydown', function (e) {
         closeModal(e)
     }
 })
+
