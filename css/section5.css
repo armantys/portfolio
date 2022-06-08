@@ -1,3 +1,9 @@
+html{
+    font-size: calc((5vh + 5vw)/2);
+}
+
+
+
 .section5{
     display: flex;
     justify-content: center;
@@ -27,14 +33,16 @@
 }
 
 .nom_prenom{
+    width: 100%;
     margin-top: 50px;
     display: flex;
+    justify-content: space-around;
 }
 .nom{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 250px;
+    
 }
 
 .prenom{
@@ -47,7 +55,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 250px;
+    
 }
 
 .tel{
@@ -57,8 +65,10 @@
 }
 
 .mail_tel{
+    width: 100%;
     margin-top: 20px;
     display: flex;
+    justify-content: space-around;
 }
 
 .obj{
@@ -82,6 +92,7 @@
 .text_mess{
     width: 600px;
     height: 200px;
+    overflow: hidden;
 }
 
 .formulaire button{
@@ -102,6 +113,7 @@ button:active {
 }
 
 .contact_moi{
+    font-size: 0.5rem;
     width: 100%;
     padding-left: 50px;
     padding-right: 50px;
@@ -110,4 +122,79 @@ button:active {
     display: flex;
     justify-content: space-around;
     background-color: grey;
+}
+
+
+@media (max-width: 850px) {
+    .formulaire{
+        width: 80vw;
+
+    }
+
+    .contact_moi{
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 655px) {
+
+    .text_mess{
+        width: 80vw;
+    }
+    .formulaire{
+        width: 75vw;
+
+    }
+
+    .contact_moi{
+        max-width: 75vw;
+    }
+}
+
+@media (max-width: 475px) {
+
+
+    .formulaire{
+        width: 70vw;
+
+    }
+
+    .contact_moi{
+        max-width: 70vw;
+    }
+    .nom_prenom{
+        flex-direction: column;
+    }
+    .nom input{
+        width:100%
+    }
+
+    .prenom input{
+        width: 100%;
+    }
+    .mail_tel{
+        flex-direction: column;
+    }
+
+    .mail input{
+        width: 100%;
+    }
+
+    .tel input{
+        width: 100%;
+    }
+
+
+}
+
+
+@media (max-width: 390px) {
+    .formulaire{
+        width: 65vw;
+
+    }
+
+    .contact_moi{
+        max-width: 65vw;
+    }
 }

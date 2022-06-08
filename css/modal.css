@@ -1,55 +1,38 @@
+/* The Modal (background) */
 .modal {
-    overflow: auto;
-    display: flex;
-    position: fixed;
-    align-items: center;
-    justify-content: center;
-    top: 0;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.3);
-    animation: fadeIn .2s both;
-}
-
-.modal-wrapper {
-    
-    overflow: auto;
-    width: 600px;
-    max-width: calc(100vw - 20px);
-    max-height: calc(100vh -20px);
-    padding: 20px;
-    background-color: #FFF;
-    animation: slideFromTop .5s both;
-}
-
-  .modal[aria-hidden="true"]{
-      animation-name: fadeOut;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
-
-  .modal[aria-hidden="true"] .modal-wrapper{
-    animation-name: slideToBottom;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes fadeOut {
-    from { opacity: 1;}
-    to {opacity: 0;}
-}
-
-
-@keyframes slideFromTop {
-        from {transform: translateY(-50px);}
-        to { transform: translateY(0px);}
-        
-}
-
-@keyframes slideToBottom {
-    from {transform: translateY(0);}
-    to { transform: translateY(50px);}
-    
-}
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

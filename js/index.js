@@ -1,82 +1,66 @@
 
 
 
+// Get the modal
+var modal = document.getElementById("myModal");
 
+// Get the button that opens the modal
+var btn = document.querySelectorAll(".bouton").forEach(element => {
+    element.onclick = function() {
+       let id = element.id.split("-")[1];
+        modal = document.getElementById("myModal-" + id);
+       modal.style.display = "block";
+      }
+      
+});
 
-let modal = null
-const focusableSelector = 'button,a,input,textarea'
-let focusables = []
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
+// When the user clicks the button, open the modal 
 
-
-
-const openModal =  async function (e) {
-
-    e.preventDefault()
-    const target = document.getElementById(e.target.id).parentNode.getAttribute('href')
-    if (target.startsWith('#')){
-      //  modal = await loadModal(target)
-        modal = document.querySelector(target)
-    }else{
-        modal = await loadModal(target)
-    }
-    focusables = Array.from(modal.querySelectorAll(focusableSelector))
-    previouslyFocusedElement = document.querySelector(':focus')
-    modal.style.display =null
-    focusables[0].focus()
-    modal.removeAttribute('aria-hidden')
-    modal.setAttribute('aria-modal', 'true')
-    modal.addEventListener('click', closeModal)
-    modal.querySelector('.js-modal-close').addEventListener('click', closeModal)
-    modal.querySelector('.js-modal-stop').addEventListener('click' , stopPropagation)
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
 }
 
-const closeModal = function (e) {
-    if (modal === null) return
-    e.preventDefault()
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+ document.querySelectorAll('.gallery').forEach(element => {
+ let isDown = false;
+let startX;
+let scrollLeft;
+ 
+ 
+    element.addEventListener('mousedown', e => {
+  isDown = true;
+  element.classList.add('active');
+  startX = e.pageX - element.offsetLeft;
+  scrollLeft = element.scrollLeft;
+});
+element.addEventListener('mouseleave', _ => {
+  isDown = false;
+  element.classList.remove('active');
+});
+element.addEventListener('mouseup', _ => {
+  isDown = false;
+  element.classList.remove('active');
+});
+element.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - element.offsetLeft;
+  const SCROLL_SPEED = 2;
+  const walk = (x - startX) * SCROLL_SPEED;
+  element.scrollLeft = scrollLeft - walk;
+});
    
-    modal.setAttribute('aria-hidden','true')
-    modal.removeAttribute('aria-modal')
-    modal.removeEventListener('click', closeModal)
-    modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
-    modal.querySelector('.js-modal-stop').removeEventListener('click' , stopPropagation)
-    const hideModal = function() {
-        modal.style.display = "none"
-        modal.removeEventListener('animationend', hideModal)
-        modal = null
-    }
-    modal.addEventListener('animationend', hideModal)
-}
+});;
 
-const stopPropagation = function(e){
-    e.stopPropagation()
-}
-
-const loadModal =  async function (url) {
-    const target = '#' + url.split('#')[1]
-    const exitingModal = document.querySelector(target)
-    if (exitingModal !== null) return exitingModal
-  const html = await fetch(url).then(response => response.text())
- const element = document.createRange().createContextualFragment(html).querySelector(target)
- if (element === null) throw `l'élément ${target} n'a pas été trouver dans la page ${url}`
- document.body.append(element)
- return element
-
-  
-}
-
-
-
-
-
-document.querySelectorAll('.js-modal').forEach(a => {
-    a.addEventListener('click',openModal)
-})
-
-
-window.addEventListener('keydown', function (e) {
-    if (e.key === "Escape" || e.key === "esc") {
-        closeModal(e)
-    }
-})
 

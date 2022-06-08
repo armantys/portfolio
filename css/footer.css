@@ -11,6 +11,7 @@ footer{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap
 }
 
 .logo_nom{
@@ -20,4 +21,8 @@ footer{
 
 .logo_footer{
     height: 80px;
+}
+
+footer a:hover{
+    cursor: pointer;
 }

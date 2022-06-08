@@ -21,21 +21,43 @@
 }
 
 .les_front{
-    width: 1000px;
+    width: 550px;
 }
 
 .back_end_1{
-    width: 300px;
+    width: 230px;
 }
 
 .back_end_2{
-    width: 300px;
+    width: 190px;
 }
 
 .les_cms h3{
-    margin-top: 100px;
+    margin-top: 155px;
 }
 
 .les_cms img{
-    width: 300px;
+    width: 160px;
+}
+
+@media (max-width: 570px) {
+    .les_front{
+        max-width: 100%;
+
+    }
+    .back_end_1{
+        max-width:50%;
+    }
+    
+    .back_end_2{
+       max-width: 35vw;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .les_cms img{
+        max-width: 40vw;
+    }
+
 }

@@ -1,3 +1,5 @@
+
+
 .section2{
     background-image: url(../img/fond_bois.jpg);
     padding-bottom: 250px;
@@ -8,21 +10,40 @@
 }
 
 .moi{
-    height: 550px;
-    width: 60%;
+
     background-color: #C9C9C9;
     display: flex;
     flex-direction: column;
     margin-top: 250px;
-   
+    padding-bottom: 50px;
+    align-items: center
 }
 
 h2{
     text-align: center;
-    font-size: 62px;
+    font-size: 1.5rem;
 }
 
 .description_moi{
+    margin-top: 40px;
     text-align: center;
-    font-size: 35px;
+    font-size:0.6rem;
 }
+
+.cv{
+    margin-top:30px;
+    font-size: 0.8rem;
+}
+
+.moi a{
+    
+    color: black;
+}
+
+
+
+
+
+
+
+ 
