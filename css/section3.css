@@ -81,9 +81,11 @@
 
 .modal-content{
     animation: 0.5s both 0s    desc ;
+    
 }
     @keyframes desc { from {margin-top: 100%;} to {margin-top: 0;}
 }
+
 
 
 

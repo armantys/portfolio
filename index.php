@@ -1,5 +1,6 @@
 <?php
-    require_once("pages/connexion.php");
+    session_start();
+    require_once("pages/config.php");
 
     $sql= "SELECT * FROM projet";
    
@@ -41,6 +42,7 @@
               <li><a href="#section3">Projet</a></li>
               <li><a href="#section4">Langage</a></li>
               <li><a href="#section5">Me contacter</a></li>
+              <li> <a href="pages/page_co.php"> connexion</a></li>
           </ul>
           
       </div>
