@@ -22,10 +22,10 @@
                     </div>
                     <?php
                     break;
-                    case 'email':
+                    case 'pseudo':
                         ?>
                         <div class="alert alert-danger">
-                            <strong>Erreur</strong> email incorrect
+                            <strong>Erreur</strong> pseudo incorrect
                         </div>
                         <?php
                     break;
@@ -44,7 +44,7 @@
         <form action="connexion.php" method="POST">
             <h2 class="text_center">connexion</h2>
             <div class="form_group">
-                <input type="text" name="email" class="form_control" placeholder="email" required="required" autocomplete="off">
+                <input type="text" name="pseudo" class="form_control" placeholder="pseudo" required="required" autocomplete="off">
             </div>
             <div class="form_group">
                 <input type="text" name="password" class="form_control" placeholder="mot de passe" required="required" autocomplete="off">
@@ -53,7 +53,7 @@
                 <button type="submit" class="bouton_co">connexion</button>
             </div>
         </form>
-        <p class="text-center"><a href="inscription.php">inscription</a></p>
+      <!--  <p class="text-center"><a href="inscription.php">inscription</a></p> -->
 
     </div>
     

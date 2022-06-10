@@ -51,7 +51,7 @@
 <body>
     <section id="section_1" class="section_1">
         <img class="logo" src="./img/logo_kitsune.png" alt="logo_portfolio">
-        <h1>souquet ludovic</h1>
+        <h1 class="nom">souquet ludovic</h1>
         <div class= "full">
         <p class="devweb">Developpeur Web </p>
         <p class="devweb">Full Stack</p>

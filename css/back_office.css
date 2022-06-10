@@ -1,0 +1,37 @@
+html{
+    font-size: calc((5vh + 5vw)/2);
+    background-image: url(../img/background_site.png);
+}
+
+h1{
+    text-align: center;
+    color: aliceblue;
+}
+
+.pseudo_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pseudo{
+    position: absolute;
+    color: aliceblue;
+    margin-left: 120px;
+    font-size: 1.1rem;
+}
+
+.blason{
+    width: 50%;
+}
+
+.categorie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categorie a{
+    text-decoration: none;
+    color: aliceblue;
+}
