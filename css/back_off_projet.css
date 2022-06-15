@@ -1,0 +1,93 @@
+
+body{
+    background-image: url(../img/background_site.png);
+ 
+    background-size: auto;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255); 
+    font-size: 20px;
+}
+
+h1{
+    color: antiquewhite;
+    text-align: center;
+   
+}
+
+.file{
+    margin-top: 50px;
+    display: flex;
+    font-size: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nom_desc{
+    font-size: 30px;
+}
+
+.nom_projet{
+
+    margin-bottom: 50px;
+}
+
+.radio{
+    font-size: 30px;
+
+    margin-top: 50px;
+}
+
+.ajout{
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.ajout button{
+    margin-top: 20px;
+}
+
+textarea{
+    width:50%;
+    height: 250px;
+}
+.tableau,th,td{
+    font-size: 20px; 
+    border: 1px solid black;
+}
+
+.tableau{
+    background-color: grey;
+    width: 100%;
+   
+}
+
+
+
+td{
+    color: aliceblue;
+    text-align: center;
+    
+}
+th{
+    color: aliceblue;
+}
+
+table img{
+    width: 150px;
+}
+table{
+    width: 100%;
+}
+
+@media (max-width:650px){
+    .img{
+        display: none;
+    }
+}

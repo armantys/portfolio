@@ -1,0 +1,6 @@
+
+
+mercredi 15 juin 2022 11:29:02 - Erreur import liste catégorie consoles. Erreur : PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'esfsefs' for column 'telephone' at row 1 in C:\laragon\www\portfolio\index.php:157
+Stack trace:
+#0 C:\laragon\www\portfolio\index.php(157): PDOStatement->execute()
+#1 {main}

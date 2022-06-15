@@ -51,7 +51,7 @@
 <body>
     <section id="section_1" class="section_1">
         <img class="logo" src="./img/logo_kitsune.png" alt="logo_portfolio">
-        <h1 class="nom">souquet ludovic</h1>
+        <h1 class="nom_moi">souquet ludovic</h1>
         <div class= "full">
         <p class="devweb">Developpeur Web </p>
         <p class="devweb">Full Stack</p>
@@ -59,16 +59,21 @@
     </section>
     <section id="section2" class="section2">
         <div class="moi">
-            <h2>A propos de moi</h2>
-            <p class="description_moi">hello !! je m'appelle Ludovic Souquet, actuellement en formation </br>
-            developpeur web, j'ai déja fais plusieurs catégories de métier qui mon permis </br>
-            d'aquérir de l'expérience et des compétence tel que l'organisation </br>
-            ou l'autonomie, ayant toujours eu une attirance pour l'informatique et le codage, </br>
-            je me suis dirigée vers cette formation qui mélange apprentissage de connaissance et travaille d'équipe. </br>
-            la curiosité, l'envie d'avancer et la motivation fond aussi partie de mon vocabulaire. </br>
+            <?php
+            echo "<h2>A propos de moi</h2>";
+            $requete= $db->prepare("SELECT * FROM description WHERE id");
+            $requete->execute();
             
+            $description=$requete->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($description as $desc){
+                if($desc['etat'] == 1){
+            ?>
+            <p class="description_moi"> <?= $desc['ma_description'] ?></br>
+        
+           <?php } 
+            }?>
             </p>
-            <p class="cv">n'hésitez pas a visualiser <a href="./CV Ludovic SOUQUET.pdf" data-insertor-exclude="1">mon CV</a></p>
+            <p class="cv">n'hésitez pas a visualiser <a target="blank" href="./CV Ludovic SOUQUET.pdf" data-insertor-exclude="1">mon CV</a></p>
         </div>
     </section>
     <section id="section3" class="section3">
@@ -76,6 +81,7 @@
     <?php
             
         foreach($projets as $proj){
+            if($proj["etat"] == 1){
         echo    '<div class="jadoo">
                     <p class="les_projets">'.$proj['nom_projet'].'</p>
                  <button id = "btn-'.$proj['id_projet'].'" class="bouton"'.$proj['id_projet'].'>  <img id="projet" class"img_demo"   src="./img/'.$proj['img_projet'].'" alt="'.$proj['nom_projet'].'"></button>
@@ -95,28 +101,34 @@
                     </ul>
                 </div>
 
-                </div>';       
+                </div>  '; ?>
+        
+        <?php    
+        }
        }
-       
+       $requete= $db->prepare("SELECT * FROM langage WHERE id");
+            $requete->execute();
+
+            $langage=$requete->fetchAll(PDO::FETCH_ASSOC);
+            echo "</section>"; 
+            echo '<section id="section4" class="section4">';
+            foreach ($langage as $lang){
+                if($lang['etat'] == 1){
         ?>
-    </section >
-    <section id="section4" class="section4">
-        <div class="front_end">
-            <h3>front-end</h3>
-            <img class="les_front" src="./img/logo_ 3_principaux.png" alt="logo html css javascript">
+  
+    
+        <div class="les_langage">
+            <h3><?= $lang["nom"]?></h3>
+            <img id=<?= $lang["id"]?> class=<?= $lang["nom"]?> src=<?="./img/".$lang["img1"] ?> alt="logo langage">
+         <?php   if (!empty($lang["img2"])){ ?>
+            <img id=<?= $lang["id"]?> class=<?= $lang["nom"]?> src=<?="./img/".$lang["img2"] ?> alt="logo langage">
+         <?php   }?>
         </div>
-        <div class="back_end">
-            <h3>back-end</h3>
-            <img class="back_end_1" src="./img/logo_php.png" alt="logo php">
-            <img class="back_end_2" src="./img/logo_sql.png" alt="logo sql">
-        </div>
-        <div class="les_cms">
-            <h3>les cms</h3>
-            <img src="./img/logo_wordpress.png" alt="logo wordpress">
-            <img src="./img/logo_bootstrap.png" alt="logo bootstrap">
-        </div>
-    </section>
+    
 <?php
+    }
+}
+ echo "</section>";
 
 if ($_POST){ // quelqu'un a appuyée sur le bouton du formulaire
     if(isset($_POST["nom"]) && !empty($_POST["nom"]) // si le champs sont bien rempli
@@ -171,11 +183,12 @@ if ($_POST){ // quelqu'un a appuyée sur le bouton du formulaire
                 <div class="mail_tel">
                     <div class="mail">
                         <label for="email">E-mail</label>
-                        <input type="text" name="email" id="email">
+                        <input type="email" name="email" id="email">
                     </div>
                     <div class="tel">
                         <label for="telephone">Telephone</label>
-                        <input type="Num" name="telephone" id="telephone">
+                        <input type="tel" name="telephone" id="telephone" pattern="[0-9]{10}">
+                        
                     </div>    
                 </div>
                 <div class="obj">
@@ -189,9 +202,7 @@ if ($_POST){ // quelqu'un a appuyée sur le bouton du formulaire
                 <button type="submit">envoyer</button>
             </form>
 
-            
             <div class="contact_moi">
-           
             </div>
         </div> 
     </section>

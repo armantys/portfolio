@@ -1,0 +1,22 @@
+body{
+    background-image: url(../img/background_site.png);
+    background-size: auto;
+}
+
+html{
+    color: aliceblue;
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+    margin-top: 100px;
+}
+
+form{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

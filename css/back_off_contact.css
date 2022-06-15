@@ -1,0 +1,65 @@
+html{
+    
+    color: aliceblue;
+    
+}
+
+body{
+    background-image: url(../img/background_site.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255); 
+    font-size: 20px;
+}
+
+
+
+h1{
+    color: antiquewhite;
+    text-align: center;
+   
+}
+.message{
+    font-size: 20px;
+}
+
+.autre{
+    font-size: 20px;
+}
+
+
+.tableau,th,td{
+    font-size: 20px; 
+    border: 1px solid black;
+}
+
+.tableau{
+    background-color: grey;
+    width: 100%;
+    
+   
+}
+
+
+
+td{
+    text-align: center;
+}
+
+
+
+@media (max-width: 650px){
+    #ma_description{
+        width: 90%;
+    }
+}
+
+@media (max-width: 400px){
+    h1{
+        font-size: 18vw;
+    }
+}

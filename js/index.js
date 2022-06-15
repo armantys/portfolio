@@ -15,14 +15,16 @@ var btn = document.querySelectorAll(".bouton").forEach(element => {
 });
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
+document.querySelectorAll(".close").forEach(element => {
+  // When the user clicks the button, open the modal 
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+element.onclick = function() {
   modal.style.display = "none";
 }
+
+});;
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

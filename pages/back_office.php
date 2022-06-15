@@ -21,8 +21,7 @@
     <h1>Bienvenue sur le back office</h1>
     </div>
     <div class="pseudo_img">
-    <p class="pseudo">Armantis</p>
-    <img class="blason" src="../img/blason_logovide.png" alt="">
+        <img class="blason" src="../img/blason_armantis.png" alt=""></img>
     </div>
     <div class="categorie">
         <a href="back_off_description.php">Ma description</a>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/page_co.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>page de connexion</title>
 </head>
@@ -47,15 +48,30 @@
                 <input type="text" name="pseudo" class="form_control" placeholder="pseudo" required="required" autocomplete="off">
             </div>
             <div class="form_group">
-                <input type="text" name="password" class="form_control" placeholder="mot de passe" required="required" autocomplete="off">
+                <input type="password" name="password" id="motdepasse" class="form_control" placeholder="mot de passe" required="required" autocomplete="off">
             </div>
+            <input type="checkbox" onclick="Afficher()">
             <div class="form_group">
                 <button type="submit" class="bouton_co">connexion</button>
             </div>
+            <a href="../index.php">retour a l'index</a>
         </form>
-      <!--  <p class="text-center"><a href="inscription.php">inscription</a></p> -->
 
     </div>
+    <script>
+function Afficher()
+{ 
+var input = document.getElementById("motdepasse"); 
+if (input.type === "password")
+{ 
+input.type = "text"; 
+} 
+else
+{ 
+input.type = "password"; 
+} 
+} 
+</script>
     
 </body>
 </html>
